@@ -1,9 +1,11 @@
 <template>
   <div class="card">
-    <div class="count">{{ count }}</div>
+    <div class="count">{{ $store.state.count }}</div>
     <div class="buttons">
-      <button class="btn mr-1">-</button>
-      <button class="btn">+</button>
+      <button class="btn mr-1" @click="$store.dispatch('decreaseCount')">
+        -
+      </button>
+      <button class="btn" @click="$store.dispatch('increaseCount')">+</button>
     </div>
   </div>
 </template>
